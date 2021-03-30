@@ -1,0 +1,30 @@
+{
+	"name": "pg-ae/fancycard",
+	"type": "typo3-cms-extension",
+	"description": "A custom card element with fancy handling. It wil display an simple Card with an Image as Header and and Title and Subitle as Body. If you click on it it open a popup on large screens or an accordion body on smaller screens.",
+	"authors": [
+		{
+			"name": "Patrik Garten",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"typo3/cms-core": "^9.5"
+	},
+	"require-dev": {
+		"roave/security-advisories": "dev-latest"
+	},
+	"autoload": {
+		"psr-4": {
+			"PgAe\\Fancycard\\": "Classes"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"PgAe\\Fancycard\\Tests\\": "Tests"
+		}
+	},
+	"replace": {
+		"typo3-ter/pgae-fancycard": "self.version"
+	}
+}

@@ -1,0 +1,40 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "A custom card element with fancy handling. It wil display an simple Card with an Image as Header and and Title and Subitle as Body. If you click on it it open a popup on large screens or an accordion body on smaller screens.",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 9.5.0-9.5.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": true,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "9.5.0-9.5.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "pgae_fancycard",
+        "name": "Fancy Card",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "Patrik Garten Anwendungsentwicklung",
+                "email": "info@patrikgarten.de",
+                "name": "Patrik Garten",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "PgAe"
+    },
+    "wires": [],
+    "storagePath": "\/var\/www\/html\/public\/typo3conf\/ext\/",
+    "log": {
+        "last_modified": "2021-03-30 11:38",
+        "extension_builder_version": "9.10.3",
+        "be_user": "Weder und Noch (8)"
+    }
+}

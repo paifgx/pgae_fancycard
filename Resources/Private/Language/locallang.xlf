@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2020-06-28UTC10:02:240">
+        <header>
+            <authorName>Patrik Garten</authorName>
+            <authorEmail>info@patrikgarten.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="pgae_fancycard_title">
+                <source>Fancy Card Element</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

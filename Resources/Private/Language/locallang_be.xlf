@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2020-06-28UTC10:02:240">
+        <header>
+            <authorName>Patrik Garten</authorName>
+            <authorEmail>info@patrikgarten.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="title">
+                <source>Fancy Card Element</source>
+            </trans-unit>
+            <trans-unit id="description">
+                <source>A custom card element with fancy handling. It wil display an simple Card with an Image as Header and and Title and Subitle as Body. If you click on it it open a popup on large screens or an accordion body on smaller screens.</source>
+            </trans-unit>
+
+            <trans-unit id="settings">
+                <source>Settings</source>
+            </trans-unit>
+            <trans-unit id="default_element">
+                <source>Element</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
