@@ -9,8 +9,20 @@
 
 defined('TYPO3_MODE') || die();
 
-/***************
- * PageTS
- */
+call_user_func(static function () {
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+        'pgae_fancycard',
+        'setup',
+        "@import 'EXT:pgae_fancycard/Configuration/TypoScript/setup.typoscript'"
+    );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pgae_fancycard/Configuration/TsConfig/Page/ContentElement/Element/FancyCard.tsconfig">');
+    /***************
+     * PageTS
+     */
+
+// Add Content Elements
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pgae_fancycard/Configuration/TsConfig/Page/ContentElement/All.tsconfig">');
+
+// TCEFORM
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pgae_fancycard/Configuration/TsConfig/Page/TCEFORM.tsconfig">');
+});
