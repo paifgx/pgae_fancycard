@@ -10,5 +10,22 @@ tt_content {
   pgae_fancycard =< lib.contentElement
   pgae_fancycard {
     templateName = FancyCard
+
+    dataProcessing {
+      10 = BK2K\BootstrapPackage\DataProcessing\FlexFormProcessor
+      20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+      20 {
+        table = tx_pgaefancycard_item
+        pidInList.field = pid
+        where {
+          data = field:uid
+          intval = 1
+          wrap = tt_content=|
+        }
+
+        orderBy = sorting
+      }
+    }
   }
+
 }

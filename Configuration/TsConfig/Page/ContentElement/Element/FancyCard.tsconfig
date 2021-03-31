@@ -5,8 +5,8 @@ mod.wizards.newContentElement.wizardItems.interactive {
   elements {
     pgae_fancycard {
       iconIdentifier = content-text
-      title = LLL:EXT:pgae_fancycard/Resources/Private/Language/locallang_be.xlf:title
-      description = LLL:EXT:pgae_fancycard/Resources/Private/Language/locallang_be.xlf:description
+      title = LLL:EXT:pgae_fancycard/Resources/Private/Language/locallang.xlf:title
+      description = LLL:EXT:pgae_fancycard/Resources/Private/Language/locallang.xlf:description
       tt_content_defValues {
         CType = pgae_fancycard
       }

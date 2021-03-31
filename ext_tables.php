@@ -1,10 +1,6 @@
-<?php
+<?php defined('TYPO3_MODE') || die('Access denied.');
 
-/*
- * This file is part of the package pgae/fancycard.
- *
- * For the full copyright and license information, please read the
- * LICENSE file that was distributed with this source code.
+/***************
+ * Allow Custom Records on Standard Pages
  */
-
-defined('TYPO3_MODE') || die();
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_pgaefancycard_item');
