@@ -44,5 +44,6 @@ create table tx_pgaefancycard_item (
 # Table structure for table 'tt_content'
 #
 create table tt_content (
-	tx_pgaefancycard_item int(11) default '0' not null
+	tx_pgaefancycard_item  int(11) default '0' not null,
+	tx_pgaefancycard_image int(11) default '0' not null
 );

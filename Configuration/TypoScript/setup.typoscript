@@ -3,6 +3,7 @@
 ###############################
 lib.contentElement {
   templateRootPaths.pgae_fancycard = EXT:pgae_fancycard/Resources/Private/Templates/
+  partialRootPaths.pgae_fancycard = EXT:pgae_fancycard/Resources/Private/Partials/
 }
 
 tt_content {
@@ -13,6 +14,7 @@ tt_content {
 
     dataProcessing {
       10 = BK2K\BootstrapPackage\DataProcessing\FlexFormProcessor
+
       20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
       20 {
         table = tx_pgaefancycard_item
@@ -24,6 +26,18 @@ tt_content {
         }
 
         orderBy = sorting
+      }
+
+      30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+      30 {
+        references.fieldName = tx_pgaefancycard_image
+        folders.field = file_folder
+        sorting.field = filelink_sortings
+      }
+
+      40 = BK2K\BootstrapPackage\DataProcessing\FileFilterProcessor
+      40 {
+        predefinedList = image
       }
     }
   }
