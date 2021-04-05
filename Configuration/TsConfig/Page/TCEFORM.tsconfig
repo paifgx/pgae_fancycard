@@ -7,5 +7,9 @@ TCEFORM {
     header_link.types.pgae_fancycard.disabled = 1
     header_position.types.pgae_fancycard.disabled = 1
     date.types.pgae_fancycard.disabled = 1
+
+    background_color_class.types.pgae_fancycard.disabled = 1
+    background_image.types.pgae_fancycard.disabled = 1
+    background_image_options.types.pgae_fancycard.disabled = 1
   }
 }
