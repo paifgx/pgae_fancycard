@@ -2,6 +2,7 @@
 #### CTYPE: PGAE FANCYCARD ####
 ###############################
 lib.contentElement {
+  layoutRootPaths.pgae_fancycard = EXT:pgae_fancycard/Resources/Private/Layouts/
   templateRootPaths.pgae_fancycard = EXT:pgae_fancycard/Resources/Private/Templates/
   partialRootPaths.pgae_fancycard = EXT:pgae_fancycard/Resources/Private/Partials/
 }
