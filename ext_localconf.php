@@ -19,10 +19,9 @@ call_user_func(static function () {
     /***************
      * PageTS
      */
-
-// Add Content Elements
+    // Add Content Elements
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pgae_fancycard/Configuration/TsConfig/Page/ContentElement/All.tsconfig">');
 
-// TCEFORM
+    // TCEFORM
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:pgae_fancycard/Configuration/TsConfig/Page/TCEFORM.tsconfig">');
 });

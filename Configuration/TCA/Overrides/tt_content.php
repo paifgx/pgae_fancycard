@@ -43,6 +43,8 @@ $GLOBALS['TCA']['tt_content']['types']['pgae_fancycard'] = array_replace_recursi
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.headers;headers,
                 tx_pgaefancycard_image,
                 tx_pgaefancycard_item,
+            --div--;LLL:EXT:pgae_fancycard/Resources/Private/Language/locallang.xlf:settings,
+                pi_flexform,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
@@ -113,4 +115,13 @@ $GLOBALS['TCA']['tt_content']['columns']['tx_pgaefancycard_item'] = [
         ]
     ]
 ];
+
+/***************
+ * Add flexForms for content element configuration
+ */
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+    '*',
+    'FILE:EXT:pgae_fancycard/Configuration/FlexForms/Default.xml',
+    'pgae_fancycard'
+);
 

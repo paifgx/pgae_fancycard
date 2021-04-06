@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <header_color>
+                        <TCEforms>
+                            <label>Color</label>
+                            <config>
+                                <type>input</type>
+                                <renderType>colorpicker</renderType>
+                                <size>10</size>
+                            </config>
+                        </TCEforms>
+                    </header_color>
+
+                    <columns>
+                        <TCEforms>
+                            <label>Columns</label>
+                            <config>
+                                <type>input</type>
+                                <size>10</size>
+                                <eval>trim,int</eval>
+                                <range>
+                                    <lower>1</lower>
+                                    <upper>3</upper>
+                                </range>
+                                <default>1</default>
+                                <slider>
+                                    <step>1</step>
+                                    <width>200</width>
+                                </slider>
+                            </config>
+                        </TCEforms>
+                    </columns>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

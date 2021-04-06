@@ -9,6 +9,9 @@ create table tx_pgaefancycard_item (
 	subheader        varchar(255)      default ''  not null,
 	tt_content       int(11) unsigned  default '0',
 	item_type        varchar(255)      default ''  not null,
+	nav_title        varchar(255)      default ''  not null,
+	bodytext         text,
+	image            int(11) unsigned  default '0',
 
 	tstamp           int(11) unsigned  default '0' not null,
 	crdate           int(11) unsigned  default '0' not null,

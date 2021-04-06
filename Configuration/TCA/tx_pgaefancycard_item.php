@@ -59,11 +59,56 @@ return [
             'showitem' => '
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
                 --palette--;LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:carousel_item.header;header,
+                nav_title,
+                bodytext,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,
                 --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
                 --palette--;;hiddenLanguagePalette,
             '
+        ],
+        'image' => [
+            'showitem' => '
+                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
+                header;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header.ALT.html_formlabel,
+                image,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
+                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,
+                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
+                --palette--;;hiddenLanguagePalette,
+            '
+        ],
+        'text_and_image' => [
+            'showitem' => '
+                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
+                --palette--;LLL:EXT:bootstrap_package/Resources/Private/Language/Backend.xlf:carousel_item.header;header,
+                nav_title,
+                bodytext,
+                image,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
+                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,
+                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
+                --palette--;;hiddenLanguagePalette,
+            '
+        ],
+        'html' => [
+            'showitem' => '
+                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
+                header;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header.ALT.html_formlabel,
+                bodytext;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext.ALT.html_formlabel,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
+                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,
+                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
+                --palette--;;hiddenLanguagePalette,
+            ',
+            'columnsOverrides' => [
+                'bodytext' => [
+                    'config' => [
+                        'enableRichtext' => false,
+                        'rows' => 15,
+                    ]
+                ]
+            ]
         ],
     ],
     'palettes' => [
@@ -78,15 +123,7 @@ return [
         ],
         'header' => [
             'showitem' => '
-                header,
-                header_layout,
-                header_class,
-                --linebreak--,
-                subheader,
-                subheader_layout,
-                subheader_class,
-                --linebreak--,
-                header_position,
+                header, subheader,
             '
         ],
         'general' => [
@@ -119,7 +156,6 @@ return [
                 'default' => 0,
             ],
         ],
-
         'sys_language_uid' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
@@ -244,5 +280,80 @@ return [
             'l10n_mode' => 'exclude',
         ],
 
+
+        'nav_title' => [
+            'exclude' => true,
+            'label' => 'Title',
+            'config' => [
+                'type' => 'input',
+                'size' => 50,
+                'eval' => 'trim'
+            ],
+        ],
+        'bodytext' => [
+            'label' => 'Text',
+            'l10n_mode' => 'prefixLangTitle',
+            'l10n_cat' => 'text',
+            'config' => [
+                'type' => 'text',
+                'cols' => '80',
+                'rows' => '5',
+                'softref' => 'typolink_tag,images,email[subst],url',
+                'enableRichtext' => true,
+                'richtextConfiguration' => 'default'
+            ],
+        ],
+        'image' => [
+            'exclude' => true,
+            'label' => 'Image',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                'image',
+                [
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
+                    ],
+                    'overrideChildTca' => [
+                        'types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_UNKNOWN => [
+                                'showitem' => '
+                                    --palette--;;filePalette
+                                '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                                'showitem' => '
+                                    --palette--;;filePalette
+                                '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                'showitem' => '
+                                    title,
+                                    alternative,
+                                    crop,
+                                    --palette--;;filePalette
+                                '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                                'showitem' => '
+                                    --palette--;;filePalette
+                                '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                                'showitem' => '
+                                    --palette--;;filePalette
+                                '
+                            ],
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                                'showitem' => '
+                                    --palette--;;filePalette
+                                '
+                            ],
+                        ],
+                    ],
+                    'minitems' => 0,
+                    'maxitems' => 1,
+                ],
+                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+            ),
+        ],
     ]
 ];

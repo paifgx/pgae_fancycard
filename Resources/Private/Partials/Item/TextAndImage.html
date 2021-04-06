@@ -1,0 +1,17 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{item.data.nav_title}">
+    <h3>{item.data.nav_title}</h3>
+</f:if>
+
+<f:format.html>{item.data.bodytext}</f:format.html>
+
+<f:if condition="{item.images.0}">
+    <f:variable name="imageConfig">{settings.responsiveimages.contentelements.{data.CType}}</f:variable>
+    <f:variable name="imageConfig">{imageConfig.{item.data.item_type}}</f:variable>
+    <bk2k:data.imageVariants as="variants" variants="{variants}" multiplier="{imageConfig.multiplier}"
+                             gutters="{imageConfig.gutters}" corrections="{imageConfig.corrections}"/>
+    <f:render partial="Media/Rendering/Image"
+              arguments="{file: item.images.0, data: item.data, settings: settings, variants: variants}"/>
+</f:if>
+</html>

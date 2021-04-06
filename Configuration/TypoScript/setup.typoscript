@@ -27,6 +27,14 @@ tt_content {
         }
 
         orderBy = sorting
+
+        dataProcessing {
+          10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+          10 {
+            references.fieldName = image
+            as = images
+          }
+        }
       }
 
       30 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
@@ -44,3 +52,6 @@ tt_content {
   }
 
 }
+
+page.includeCSS.pgae_fancycard = EXT:pgae_fancycard/Resources/Public/Css/main.css
+page.includeJSFooter.pgae_fancycard = EXT:pgae_fancycard/Resources/Public/JavaScript/main.js
