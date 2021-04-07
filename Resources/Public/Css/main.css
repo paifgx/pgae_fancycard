@@ -6,6 +6,19 @@
     padding: 72px 80px 16px;
 }
 
+.frame.frame-type-pgae_fancycard .fancycard__header h2,
+.frame.frame-type-pgae_fancycard .fancycard__header h3 {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    padding: 0;
+}
+
+.frame.frame-type-pgae_fancycard .fancycard__header h2 span,
+.frame.frame-type-pgae_fancycard .fancycard__header h3 span {
+    color: #000;
+    padding: 0;
+}
+
 .frame.frame-type-pgae_fancycard .modal-dialog {
     width: 60%;
     max-width: 1024px;
