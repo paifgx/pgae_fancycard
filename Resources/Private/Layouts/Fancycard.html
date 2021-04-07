@@ -2,8 +2,6 @@
       xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:spaceless>
 
-    <f:debug>{_all}</f:debug>
-
     <bk2k:data.imageVariants as="variants" variants="{settings.responsiveimages.variants}"/>
     <f:variable name="backendlayoutConfig">{settings.responsiveimages.backendlayout.{backendlayout}}</f:variable>
     <f:variable name="columnConfig">{backendlayoutConfig.{data.colPos}}</f:variable>
