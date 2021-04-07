@@ -6,12 +6,26 @@
     padding: 72px 80px 16px;
 }
 
+.frame.frame-type-pgae_fancycard .modal-dialog {
+    width: 60%;
+    max-width: 1024px;
+}
+
+.frame.frame-type-pgae_fancycard .modal-header {
+    margin-top: 72px;
+}
+
+.frame.frame-type-pgae_fancycard .modal-header .frame-header {
+    margin-left: 1rem;
+    width: 100%;
+}
+
 .frame.frame-type-pgae_fancycard .fancycard__header .element-header,
 .frame.frame-type-pgae_fancycard .fancycard__header .element-subheader {
     font-size: 1.25rem;
 }
 
-.frame.frame-type-pgae_fancycard .fancycard__header picture {
+.frame.frame-type-pgae_fancycard .fancycard__header .img-wrap {
     position: absolute;
     border-radius: 100%;
 
@@ -32,12 +46,6 @@
     right: 16px;
 }
 
-@media (min-width: 992px) {
-    .frame.frame-type-pgae_fancycard .fancycard__header .btn-toggle {
-        display: none;
-    }
-}
-
 .frame.frame-type-pgae_fancycard .fancycard__header .btn-toggle svg {
     width: 48px;
     height: 48px;
@@ -54,4 +62,47 @@
 .frame.frame-type-pgae_fancycard img {
     max-width: 100%;
     height: auto;
+}
+
+.frame.frame-type-pgae_fancycard .modal-body.fancycard__body,
+.frame.frame-type-pgae_fancycard .fancycard__body-item {
+    padding: 8px;
+}
+
+.frame.frame-type-pgae_fancycard .fancycard__body-item {
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+@media (max-width: 992px) {
+    .frame.frame-type-pgae_fancycard .modal {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .frame.frame-type-pgae_fancycard .fancycard__header {
+        cursor: pointer;
+    }
+
+    .frame.frame-type-pgae_fancycard .fancycard__header .btn-toggle {
+        display: none;
+    }
+
+    .frame.frame-type-pgae_fancycard .fancycard__body-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .frame.frame-type-pgae_fancycard .fancycard__body-content.columns-1 .fancycard__body-item {
+        width: calc(100% / 1);
+    }
+
+    .frame.frame-type-pgae_fancycard .fancycard__body-content.columns-2 .fancycard__body-item {
+        width: calc(100% / 2);
+    }
+
+    .frame.frame-type-pgae_fancycard .fancycard__body-content.columns-3 .fancycard__body-item {
+        width: calc(100% / 3);
+    }
 }

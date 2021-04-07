@@ -3,11 +3,15 @@
 <f:layout name="Fancycard"/>
 <f:section name="Main">
 
-    <f:if condition="{records}">
-        <f:for each="{records}" as="item" iteration="iteration">
-            <f:render partial="Item/{item.data.item_type -> bk2k:format.upperCamelCase()}" arguments="{_all}" />
-        </f:for>
-    </f:if>
+    <div class="fancycard__body-content columns-{data.pi_flexform.columns}">
+        <f:if condition="{records}">
+            <f:for each="{records}" as="item" iteration="iteration">
+                <div class="fancycard__body-item item-{iteration.index}">
+                    <f:render partial="Item/{item.data.item_type -> bk2k:format.upperCamelCase()}" arguments="{_all}" />
+                </div>
+            </f:for>
+        </f:if>
+    </div>
 
 </f:section>
 </html>

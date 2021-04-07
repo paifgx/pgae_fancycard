@@ -2,6 +2,8 @@
       xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:spaceless>
 
+    <f:debug>{_all}</f:debug>
+
     <bk2k:data.imageVariants as="variants" variants="{settings.responsiveimages.variants}"/>
     <f:variable name="backendlayoutConfig">{settings.responsiveimages.backendlayout.{backendlayout}}</f:variable>
     <f:variable name="columnConfig">{backendlayoutConfig.{data.colPos}}</f:variable>
@@ -32,7 +34,7 @@
             <div id="c{data.uid}"
                  class="frame {frameClass} {typeClass} {layoutClass} {backgroundClass} {backgroundImageClass} {spaceBeforeClass} {spaceAfterClass}">
                 <f:render partial="Frame/General/BackgroundImage" arguments="{_all}"/>
-                <div class="frame-container" data-toggle="modal" data-target="#modal-{data.uid}">
+                <div class="frame-container" data-target="#modal-{data.uid}">
                     <div class="frame-inner">
                         <f:if condition="{data._LOCALIZED_UID}">
                             <a id="c{data._LOCALIZED_UID}"></a>
@@ -40,10 +42,12 @@
                         <f:render section="Before" optional="true">
                             <f:render partial="DropIn/Before/All" arguments="{_all}"/>
                         </f:render>
-                        <div class="fancycard__header" data-color="{data.pi_flexform.header_color}">
+                        <div class="fancycard__header">
                             <f:if condition="{files.0}">
-                                <f:render partial="Media/Rendering/Image"
-                                          arguments="{file: files.0, data: data, settings: settings, variants: variants}"/>
+                                <div style="background-color: {data.pi_flexform.header_color}" class="img-wrap">
+                                    <f:render partial="Media/Rendering/Image"
+                                              arguments="{file: files.0, data: data, settings: settings, variants: variants}"/>
+                                </div>
                             </f:if>
                             <f:render section="Header" optional="true">
                                 <f:render partial="Header/All" arguments="{_all}"/>
@@ -68,10 +72,12 @@
                 <div id="modal-{data.uid}" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
-                            <div class="modal-header" data-color="{data.pi_flexform.header_color}">
+                            <div class="modal-header fancycard__header">
                                 <f:if condition="{files.0}">
-                                    <f:render partial="Media/Rendering/Image"
-                                              arguments="{file: files.0, data: data, settings: settings, variants: variants}"/>
+                                    <div style="background-color: {data.pi_flexform.header_color}" class="img-wrap">
+                                        <f:render partial="Media/Rendering/Image"
+                                                  arguments="{file: files.0, data: data, settings: settings, variants: variants}"/>
+                                    </div>
                                 </f:if>
                                 <f:render section="Header" optional="true">
                                     <f:render partial="Header/All" arguments="{_all}"/>
@@ -80,7 +86,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body fancycard__body">
                                 <f:render section="Main" optional="true"/>
                             </div>
                         </div>
