@@ -1,99 +1,89 @@
+/* General */
 .frame.frame-type-pgae_fancycard .fancycard__header {
-    position: relative;
-    background-color: #F3F4F6;
-    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    padding: 72px 80px 16px;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0 40%);
 }
 
-.frame.frame-type-pgae_fancycard .fancycard__header h2,
-.frame.frame-type-pgae_fancycard .fancycard__header h3 {
+.frame.frame-type-pgae_fancycard .img-wrap {
+    overflow: hidden;
+    max-width: 250px;
+    max-height: 250px;
+    width: 80%;
+}
+
+.frame.frame-type-pgae_fancycard .fancycard__header:hover picture img {
+    transform: scale(1.08);
+}
+
+.frame.frame-type-pgae_fancycard .img-wrap picture {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.frame.frame-type-pgae_fancycard .img-wrap picture img {
+    transition: all .3s;
+    width: 100%;
+    max-width: 100%;
+}
+
+.frame.frame-type-pgae_fancycard .frame-header {
+    padding: 0.5rem 0;
+}
+
+.frame.frame-type-pgae_fancycard .element-header,
+.frame.frame-type-pgae_fancycard .element-subheader {
+    margin: 0;
+    padding: 0;
+}
+
+.frame.frame-type-pgae_fancycard .element-header span,
+.frame.frame-type-pgae_fancycard .element-subheader span {
     font-size: 1rem;
     line-height: 1.25rem;
-    padding: 0;
+    font-weight: 300;
+    color: rgb(0,0,0)
 }
 
-.frame.frame-type-pgae_fancycard .fancycard__header h2 span,
-.frame.frame-type-pgae_fancycard .fancycard__header h3 span {
-    color: #000;
-    padding: 0;
+.frame.frame-type-pgae_fancycard .fancycard__header button.btn-toggle,
+.frame.frame-type-pgae_fancycard .fancycard__header button.close {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
 }
 
+/* Modal */
 .frame.frame-type-pgae_fancycard .modal-dialog {
     width: 60%;
     max-width: 1024px;
 }
 
-.frame.frame-type-pgae_fancycard .modal-header {
-    margin-top: 72px;
+.frame.frame-type-pgae_fancycard .modal-content {
+    padding: 0.5rem 0;
 }
 
-.frame.frame-type-pgae_fancycard .modal-header .frame-header {
-    margin-left: 1rem;
-    width: 100%;
-}
-
-.frame.frame-type-pgae_fancycard .fancycard__header .element-header,
-.frame.frame-type-pgae_fancycard .fancycard__header .element-subheader {
-    font-size: 1.25rem;
-}
-
-.frame.frame-type-pgae_fancycard .fancycard__header .img-wrap {
-    position: absolute;
-    border-radius: 100%;
-
-    top: -64px;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.frame.frame-type-pgae_fancycard .fancycard__header picture img {
-    width: 128px;
-    height: auto;
-    padding: 15px;
-}
-
-.frame.frame-type-pgae_fancycard .fancycard__header .btn-toggle {
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-}
-
-.frame.frame-type-pgae_fancycard .fancycard__header .btn-toggle svg {
-    width: 48px;
-    height: 48px;
-}
-
-.frame.frame-type-pgae_fancycard .fancycard__body {
-    padding: 16px;
-}
-
-.frame.frame-type-pgae_fancycard .fancycard__body.hidden {
-    display: none;
-}
-
-.frame.frame-type-pgae_fancycard img {
-    max-width: 100%;
-    height: auto;
-}
-
-.frame.frame-type-pgae_fancycard .modal-body.fancycard__body,
-.frame.frame-type-pgae_fancycard .fancycard__body-item {
-    padding: 8px;
+.frame.frame-type-pgae_fancycard .modal-header.fancycard__header,
+.frame.frame-type-pgae_fancycard .modal-body.fancycard__body {
+    padding: 0;
 }
 
 .frame.frame-type-pgae_fancycard .fancycard__body-item {
-    overflow: hidden;
-    word-wrap: break-word;
+    padding: 8px 32px 8px 16px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .frame.frame-type-pgae_fancycard .modal {
         display: none !important;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .frame.frame-type-pgae_fancycard .fancycard__header {
         cursor: pointer;
     }
