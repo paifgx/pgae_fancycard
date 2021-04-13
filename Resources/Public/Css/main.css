@@ -1,4 +1,8 @@
 /* General */
+.frame.frame-type-pgae_fancycard {
+    padding: 0.25rem;
+}
+
 .frame.frame-type-pgae_fancycard .fancycard__header {
     display: flex;
     flex-direction: column;
@@ -34,7 +38,15 @@
 }
 
 .frame.frame-type-pgae_fancycard .frame-header {
-    padding: 0.5rem 0;
+    padding: 0.5rem;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.frame.frame-type-pgae_fancycard .modal-header .frame-header {
+    height: auto;
 }
 
 .frame.frame-type-pgae_fancycard .element-header,
