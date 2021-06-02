@@ -13,9 +13,6 @@
     <f:variable name="frameClass">frame-{data.frame_class}</f:variable>
     <f:variable name="typeClass">frame-type-{data.CType}</f:variable>
     <f:variable name="layoutClass">frame-layout-{data.layout}</f:variable>
-    <f:variable name="backgroundClass">frame-background-{f:if(condition: data.background_color_class, else: 'none',
-        then: data.background_color_class)}
-    </f:variable>
     <f:variable name="spaceBeforeClass">frame-space-before-{f:if(condition: data.space_before_class, else: 'none', then:
         data.space_before_class)}
     </f:variable>
@@ -23,14 +20,13 @@
         data.space_after_class)}
     </f:variable>
 
+    <f:variable name="bodyTitleColor">{f:if(condition: data.flexform_header_color, then: data.flexform_header_color, else: data.pi_flexform.header_color)}</f:variable>
+
     <f:if condition="{data.frame_class} != none">
         <f:then>
 
-            <f:variable name="backgroundImageClass">{f:if(condition: backgroundImage.0, then:
-                'frame-has-backgroundimage', else: 'frame-no-backgroundimage')}
-            </f:variable>
-            <div id="c{data.uid}"
-                 class="frame {frameClass} {typeClass} {layoutClass} {backgroundClass} {backgroundImageClass} {spaceBeforeClass} {spaceAfterClass}">
+            <div id="c{data.uid}" data-body-title-color="{bodyTitleColor}"
+                 class="frame {frameClass} {typeClass} {layoutClass} {spaceBeforeClass} {spaceAfterClass}">
                 <f:render partial="Frame/General/BackgroundImage" arguments="{_all}"/>
                 <div class="frame-container" data-target="#modal-{data.uid}">
                     <div class="frame-inner">
@@ -42,7 +38,7 @@
                         </f:render>
                         <div class="fancycard__header">
                             <f:if condition="{files.0}">
-                                <div style="background-color: {data.pi_flexform.header_color}" class="img-wrap">
+                                <div class="img-wrap">
                                     <f:render partial="Media/Rendering/Image"
                                               arguments="{file: files.0, data: data, settings: settings, variants: variants}"/>
                                 </div>
@@ -58,7 +54,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="fancycard__body hidden">
+                        <div class="fancycard__body d-none">
                             <f:render section="Main" optional="true"/>
                         </div>
                         <f:render section="After" optional="true">
@@ -72,7 +68,7 @@
                         <div class="modal-content">
                             <div class="modal-header fancycard__header">
                                 <f:if condition="{files.0}">
-                                    <div style="background-color: {data.pi_flexform.header_color}" class="img-wrap">
+                                    <div class="img-wrap">
                                         <f:render partial="Media/Rendering/Image"
                                                   arguments="{file: files.0, data: data, settings: settings, variants: variants}"/>
                                     </div>

@@ -3,7 +3,12 @@
 <f:layout name="Fancycard"/>
 <f:section name="Main">
 
-    <div class="fancycard__body-content columns-{data.pi_flexform.columns}">
+    <f:variable name="columns"><f:if condition="{data.flexform_columns}">
+        <f:then>{data.flexform_columns}</f:then>
+        <f:else>{data.pi_flexform.columns}</f:else>
+    </f:if></f:variable>
+
+    <div class="fancycard__body-content columns-{columns}">
         <f:if condition="{records}">
             <f:for each="{records}" as="item" iteration="iteration">
                 <div class="fancycard__body-item item-{iteration.index}">
